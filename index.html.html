@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akaun Gerai Satay – SOCI dan SOFP (MFRS)</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+--bg:#f6f1ea;--card:#fffdf9;--tx:#2a1d16;--mu:#7b6a5d;--bd:#e3d6c6;--ac:#8f2d14;--ac2:#f3dfd2;--ok:#1d6b3f;--er:#b3261e;--em:#e08a1e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#18120e;--card:#221a15;--tx:#f1e7dc;--mu:#ad9c8e;--bd:#3a2d24;--ac:#f0a272;--ac2:#3a2519;--ok:#6fd09a;--er:#ff8a80;--em:#f2a63c}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#18120e;--card:#221a15;--tx:#f1e7dc;--mu:#ad9c8e;--bd:#3a2d24;--ac:#f0a272;--ac2:#3a2519;--ok:#6fd09a;--er:#ff8a80;--em:#f2a63c}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:16px 14px 48px}
+header{border-bottom:3px solid var(--em);padding:6px 0 12px;margin-bottom:14px}
+h1{font:700 1.5rem/1.2 Georgia,"Times New Roman",serif;margin:0}
+header p{margin:2px 0 0;color:var(--mu);font-size:.9rem}
+nav{display:flex;gap:6px;overflow-x:auto;margin-bottom:14px}
+nav button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:10px 14px;border-radius:8px;font:inherit;cursor:pointer}
+nav button.on{background:var(--ac);color:var(--card);border-color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px;margin-bottom:14px}
+h2{font:700 1.15rem Georgia,serif;margin:0 0 10px}
+h3{font-size:1rem;margin:14px 0 4px}
+p{margin:6px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-bottom:10px}
+.acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-bottom:12px}
+.act{display:flex;align-items:center;gap:8px;text-align:left;min-height:60px;padding:8px 10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:10px;font:inherit;font-size:.95rem;cursor:pointer}
+.act span{font-size:1.5rem}
+.act:hover{border-color:var(--ac)}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.kpi div{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px}
+.kpi small{display:block;color:var(--mu)}
+.kpi b{font:700 1.3rem Georgia,serif}
+label{display:flex;flex-direction:column;gap:3px;font-size:.88rem;color:var(--mu)}
+input,select{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:10px;width:100%;min-width:0}
+button.pri{background:var(--ac);color:var(--card);border:0;border-radius:8px;padding:12px 20px;font:inherit;font-weight:600;cursor:pointer}
+button.sec{background:var(--ac2);color:var(--ac);border:0;border-radius:8px;padding:10px 14px;font:inherit;cursor:pointer;margin:0 6px 6px 0}
+button.x{background:none;border:0;color:var(--er);cursor:pointer;font-size:1.1rem;padding:4px 8px}
+:focus-visible{outline:2px solid var(--em);outline-offset:2px}
+.sc{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--bd);vertical-align:top}
+th{color:var(--mu);font-weight:600}
+.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+small,.mu{color:var(--mu);font-size:.82rem}
+#msg,.flash{min-height:1.3em;margin-top:8px}
+.flash{color:var(--ok);font-weight:600}
+#msg{color:var(--er)}
+.pv{background:var(--ac2);border-radius:8px;padding:8px 10px;font-size:.82rem;margin-bottom:10px}
+.rep{font-family:Georgia,"Times New Roman",serif}
+.rep .hd{text-align:center;margin-bottom:12px}
+.rep .hd b{display:block;font-size:1.05rem}
+.rep .hd span{color:var(--mu);font-size:.9rem}
+.rep td,.rep th{border-bottom:0;padding:3px 8px}
+.rep td small{display:block;font:italic .78rem system-ui,sans-serif}
+.rep tr.c td{font-weight:700;padding-top:10px}
+.rep tr.s td:first-child{padding-left:26px}
+.rep tr.t td.n{border-top:1px solid var(--tx)}
+.rep tr.t td,.rep tr.g td{font-weight:700}
+.rep tr.g td.n{border-top:1px solid var(--tx);border-bottom:3px double var(--tx)}
+.rep tr.h td{font-weight:700;text-decoration:underline;padding-top:12px}
+.ok{color:var(--ok)}.bad{color:var(--er)}
+@media print{header,nav,.noprint{display:none!important}body{background:#fff;color:#000}.card{border:0;padding:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><h1 id="ttl">Akaun Gerai Satay</h1><p>Rekod duit masuk dan keluar. Laporan MFRS siap sendiri.</p></header>
+<nav id="nav"></nav>
+<main id="view"></main>
+</div>
+<script>
+const KEY='satay-acc-v2';
+const A=[['1100','Property, plant and equipment – cost','Peralatan dan mesin (kos)','ppe'],['1110','Accumulated depreciation','Susut nilai terkumpul','ppe'],['1200','Inventories','Stok','inv'],['1210','Trade receivables','Pelanggan berhutang','rec'],['1220','Prepayments','Bayaran awal','pre'],['1230','Cash in hand','Tunai di tangan','cash'],['1240','Cash at bank','Wang di bank','cash'],['2000','Trade payables','Hutang pembekal','tp'],['2010','Other payables and accruals','Hutang lain','op'],['2020','Current tax payable','Cukai belum bayar','ctax'],['2030','Short-term borrowings','Pinjaman jangka pendek','cb'],['2500','Term loan (non-current)','Pinjaman bank jangka panjang','ncb'],['3000','Owner’s capital','Modal pemilik','cap'],['3100','Drawings','Pengeluaran pemilik','draw'],['3200','Retained earnings b/f','Untung terkumpul awal','re'],['4000','Revenue – satay','Jualan satay','rev'],['4010','Revenue – drinks and others','Jualan minuman dan lain-lain','rev'],['4100','Other income','Pendapatan lain','oi'],['5000','Meat and ingredients','Daging dan bahan','cogs'],['5010','Charcoal and gas','Arang dan gas','cogs'],['5020','Packaging materials','Bahan bungkusan','cogs'],['6000','Wages and salaries','Gaji dan upah','adm'],['6010','Stall rental','Sewa tapak','adm'],['6020','Utilities','Bil air dan elektrik','adm'],['6030','Licences and permits','Lesen dan permit','adm'],['6040','Depreciation','Susut nilai','adm'],['6050','Repairs and maintenance','Baiki dan selenggara','adm'],['6060','Other operating expenses','Perbelanjaan lain','adm'],['6100','Delivery and promotion','Iklan dan penghantaran','dist'],['6200','Loan interest','Faedah pinjaman','fin'],['7000','Income tax expense','Cukai pendapatan','taxe']];
+const DR=new Set('ppe inv rec pre cash draw cogs adm dist fin taxe'.split(' '));
+const ACT=[
+{t:'Jualan satay',i:'🍢',g:'in',a:'4000',s:'cr',c:'1210'},
+{t:'Jualan minuman dan lain-lain',i:'🥤',g:'in',a:'4010',s:'cr',c:'1210'},
+{t:'Pelanggan bayar hutang',i:'🤝',g:'in',a:'1210',s:'cr'},
+{t:'Pendapatan lain',i:'💰',g:'in',a:'4100',s:'cr'},
+{t:'Beli daging dan bahan',i:'🥩',g:'out',a:'5000',s:'dr',c:'2000'},
+{t:'Beli arang dan gas',i:'🔥',g:'out',a:'5010',s:'dr',c:'2000'},
+{t:'Beli bahan bungkusan',i:'📦',g:'out',a:'5020',s:'dr',c:'2000'},
+{t:'Gaji pekerja',i:'👷',g:'out',a:'6000',s:'dr'},
+{t:'Sewa tapak',i:'🏪',g:'out',a:'6010',s:'dr'},
+{t:'Bil air dan elektrik',i:'💡',g:'out',a:'6020',s:'dr'},
+{t:'Lesen dan permit',i:'📄',g:'out',a:'6030',s:'dr'},
+{t:'Baiki dan selenggara',i:'🔧',g:'out',a:'6050',s:'dr'},
+{t:'Iklan dan penghantaran',i:'🛵',g:'out',a:'6100',s:'dr'},
+{t:'Perbelanjaan lain',i:'🧾',g:'out',a:'6060',s:'dr'},
+{t:'Beli peralatan (pembakar, peti sejuk)',i:'🛠️',g:'out',a:'1100',s:'dr',c:'2000'},
+{t:'Bayar hutang pembekal',i:'✅',g:'out',a:'2000',s:'dr'},
+{t:'Bayar faedah pinjaman',i:'🏦',g:'out',a:'6200',s:'dr'},
+{t:'Pemilik letak modal',i:'⬇️',g:'own',a:'3000',s:'cr'},
+{t:'Pemilik ambil wang',i:'⬆️',g:'own',a:'3100',s:'dr'},
+{t:'Terima pinjaman bank',i:'📥',g:'own',a:'2500',s:'cr'},
+{t:'Bayar balik pokok pinjaman',i:'📤',g:'own',a:'2500',s:'dr'},
+{t:'Simpan tunai ke bank',i:'🏧',g:'own',a:'1240',s:'dr',o:'1230'}];
+const G=[['in','Duit masuk'],['out','Duit keluar'],['own','Pemilik, pinjaman dan bank']];
+let S=null,tab='home',rp='soci',act=null,flash='';
+const today=new Date().toISOString().slice(0,10);
+const kind=id=>A.find(a=>a[0]===id)[3];
+const nm=id=>A.find(a=>a[0]===id)[1];
+const my=id=>A.find(a=>a[0]===id)[2];
+function raw(id,f,t){let s=0;for(const x of S.e){if((!f||x.d>=f)&&(!t||x.d<=t)){if(x.dr===id)s+=x.a;if(x.cr===id)s-=x.a}}return s}
+const val=(id,f,t)=>DR.has(kind(id))?raw(id,f,t):-raw(id,f,t);
+const accs=k=>A.filter(a=>k.includes(a[3]));
+const tot=(k,f,t)=>accs(k).reduce((s,a)=>s+val(a[0],f,t),0);
+const pl=(f,t)=>tot(['rev','oi'],f,t)-tot(['cogs','dist','adm','fin','taxe'],f,t);
+const ny=d=>(+d.slice(0,4)+1)+d.slice(4);
+const py=d=>(+d.slice(0,4)-1)+d.slice(4);
+const endOf=s=>{const [y,m,d]=s.split('-').map(Number);return new Date(Date.UTC(y+1,m-1,d-1)).toISOString().slice(0,10)};
+const fmt=n=>{const r=Math.round(n*100)/100;if(!r)return '–';const s=Math.abs(r).toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});return r<0?'('+s+')':s};
+const rm=n=>'RM '+Math.round(n*100)/100===0?'RM 0.00':'RM '+(Math.round(n*100)/100).toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});
+const dl=d=>new Date(d+'T00:00').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const add2=(...v)=>[0,1].map(i=>v.reduce((s,x)=>s+x[i],0));
+const $=id=>document.getElementById(id);
+const dflt=()=>today>S.end?S.end:(today<S.start?S.start:today);
+
+function sample(){const e=[];let i=0;const p=(d,dr,cr,a,ds)=>e.push({id:++i,d,dr,cr,a,ds});
+p('2026-01-01','1240','3000',15000,'Pemilik letak modal');
+p('2026-01-02','1240','2500',8000,'Terima pinjaman bank');
+p('2026-01-03','1100','1240',6500,'Beli peralatan');
+p('2026-03-15','6030','1230',300,'Lesen dan permit');
+for(let m=1;m<=10;m++){const M=String(m).padStart(2,'0'),d=x=>`2026-${M}-${x}`;
+p(d(28),'1230','4000',9000+m*120,'Jualan satay');p(d(28),'1230','4010',1800,'Jualan minuman dan lain-lain');
+p(d(10),'5000','1230',3400,'Beli daging dan bahan');p(d(10),'5010','1230',620,'Beli arang dan gas');
+p(d(25),'6000','1230',2000,'Gaji pekerja');p(d(1),'6010','1230',600,'Sewa tapak');p(d(15),'6020','1230',240,'Bil air dan elektrik');
+p(d(28),'6200','1240',35,'Bayar faedah pinjaman');p(d(29),'3100','1230',2500,'Pemilik ambil wang');p(d(29),'1240','1230',1500,'Simpan tunai ke bank');}
+p('2026-10-20','5000','2000',1500,'Beli daging secara hutang');
+p('2026-10-31','6040','1110',650,'Susut nilai');p('2026-10-31','7000','2020',2500,'Anggaran cukai');p('2026-10-31','1200','5000',1200,'Stok akhir');
+return e}
+function load(){try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){S=null}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function begin(demo){const n=$('wn').value.trim()||'Gerai Satay',s=$('ws').value||'2026-01-01';
+S={name:n,start:s,end:endOf(s),e:demo?sample():[]};if(demo){S.start='2026-01-01';S.end='2026-12-31'}save();tab='home';render()}
+function welcome(){return `<div class="card"><h2>Selamat datang 👋</h2>
+<p>App ini untuk rekod duit masuk dan keluar gerai satay anda. Selepas itu ia menjana <b>Penyata Untung Rugi (SOCI)</b> dan <b>Kunci Kira-kira (SOFP)</b> mengikut MFRS 101.</p>
+<p>Tak perlu tahu akaun. Anda cuma tekan butang, isi amaun dan simpan.</p>
+<div class="grid"><label>Nama gerai<input id="wn" value="Gerai Satay Pak Mat"></label><label>Tahun kewangan bermula<input type="date" id="ws" value="2026-01-01"></label></div>
+<button class="pri" onclick="begin(0)">Mula dengan rekod kosong</button> <button class="sec" onclick="begin(1)">Cuba dengan data contoh</button></div>`}
+
+function home(){const f=S.start,t=S.end;
+const inv=tot(['inv'],null,t),debt=tot(['tp','op','ctax','cb','ncb'],null,t);
+return `<div class="kpi"><div><small>Jualan tahun ini</small><b>${rm(tot(['rev'],f,t))}</b></div><div><small>Untung bersih</small><b class="${pl(f,t)<0?'bad':''}">${rm(pl(f,t))}</b></div><div><small>Tunai dan wang di bank</small><b>${rm(tot(['cash'],null,t))}</b></div><div><small>Hutang yang perlu dibayar</small><b>${rm(debt)}</b></div></div><br>
+<div class="card"><h2>Cara guna dalam 4 langkah</h2>
+<p><b>1. Rekod</b> – setiap kali ada duit masuk atau keluar, tekan butang yang sesuai.</p>
+<p><b>2. Ulang setiap hari</b> – jualan harian cukup satu rekod sehari.</p>
+<p><b>3. Tutup tahun</b> – isi stok akhir, susut nilai dan cukai di tab <i>Tutup tahun</i>.</p>
+<p><b>4. Laporan</b> – buka tab <i>Laporan</i>, tekan Cetak untuk simpan PDF.</p>
+<button class="pri" onclick="tab='tx';act=0;render()">Rekod jualan sekarang</button></div>
+<p class="mu">Tempoh: ${dl(S.start)} hingga ${dl(S.end)}. Anda sudah ada ${S.e.length} rekod.</p>`}
+
+function vTx(){
+const L=[...S.e].sort((a,b)=>b.d.localeCompare(a.d)||b.id-a.id);
+let h=`<div class="card"><h2>Apa yang berlaku?</h2>${flash?`<div class="flash">${flash}</div>`:''}`;
+G.forEach(g=>{h+=`<h3>${g[1]}</h3><div class="acts">`+ACT.map((a,i)=>a.g===g[0]?`<button class="act" onclick="act=${i};flash='';render()"><span>${a.i}</span>${a.t}</button>`:'').join('')+`</div>`});
+h+=`</div>`;
+if(act!==null){const a=ACT[act];
+const cr=a.c?`<option value="CR">${a.g==='in'?'Belum dibayar (pelanggan hutang)':'Belum dibayar (hutang pembekal)'}</option>`:'';
+const pay=a.o?'':`<label>${a.g==='in'?'Diterima melalui':a.s==='cr'?'Masuk ke':'Dibayar melalui'}<select id="py" onchange="pv()"><option value="1230">Tunai</option><option value="1240">Bank</option>${cr}</select></label>`;
+h=`<div class="card" id="frm"><h2>${a.i} ${a.t}</h2><div class="grid"><label>Tarikh<input type="date" id="d" value="${dflt()}"></label><label>Amaun (RM)<input type="number" step="0.01" min="0" id="am" inputmode="decimal" autofocus></label>${pay}<label>Catatan (pilihan)<input id="ds"></label></div>
+<div class="pv" id="pv"></div><button class="pri" onclick="addTx()">Simpan</button> <button class="sec" onclick="act=null;render()">Batal</button><div id="msg"></div></div>`+h}
+h+=`<div class="card"><h2>Rekod terkini (${L.length})</h2>${L.length?`<div class="sc"><table><thead><tr><th>Tarikh</th><th>Butiran</th><th class="n">RM</th><th></th></tr></thead><tbody>${L.slice(0,60).map(x=>`<tr><td>${x.d}</td><td>${esc(x.ds||'')}<br><small>Dr ${my(x.dr)} · Cr ${my(x.cr)}</small></td><td class="n">${fmt(x.a)}</td><td><button class="x" title="Padam" onclick="del(${x.id})">✕</button></td></tr>`).join('')}</tbody></table></div>${L.length>60?'<p class="mu">Menunjukkan 60 rekod terkini.</p>':''}`:'<p>Belum ada rekod. Tekan satu butang di atas untuk mula.</p>'}</div>`;
+return h}
+function pair(a){const p=a.o||(($('py')||{}).value||'1230');const o=p==='CR'?a.c:p;return a.s==='dr'?[a.a,o]:[o,a.a]}
+function pv(){const el=$('pv');if(!el)return;const [dr,cr]=pair(ACT[act]);el.innerHTML=`Di belakang tabir (jurnal): <b>Dr</b> ${my(dr)} · <b>Cr</b> ${my(cr)}`}
+function addTx(){const m=$('msg'),a=ACT[act],am=parseFloat($('am').value);
+if(!$('d').value)return m.textContent='Pilih tarikh.';
+if(!(am>0))return m.textContent='Masukkan amaun lebih daripada 0.';
+const [dr,cr]=pair(a);S.e.push({id:Date.now(),d:$('d').value,dr,cr,a:Math.round(am*100)/100,ds:$('ds').value||a.t});
+save();flash='✓ Direkod: '+a.t+' RM '+am.toFixed(2);act=null;render()}
+function del(id){if(confirm('Padam rekod ini?')){S.e=S.e.filter(x=>x.id!==id);save();render()}}
+
+function vYE(){const inv=tot(['inv'],null,S.end),cost=raw('1100',null,S.end),dep=-raw('1110',null,S.end);
+return `<div class="card"><h2>Tutup tahun</h2><p>Buat tiga langkah ini pada akhir tahun sebelum cetak laporan. Rekod akan dibuat pada ${dl(S.end)}.</p>${flash?`<div class="flash">${flash}</div>`:''}
+<h3>1. Stok akhir</h3><p class="mu">Kira nilai daging, arang dan bahan yang masih ada pada hari terakhir. Stok dalam rekod sekarang: ${rm(inv)}.</p>
+<div class="grid"><label>Nilai stok sebenar (RM)<input type="number" min="0" step="0.01" id="y1" inputmode="decimal"></label></div><button class="sec" onclick="ye(1)">Rekod stok akhir</button>
+<h3>2. Susut nilai peralatan</h3><p class="mu">Peralatan makin lusuh setiap tahun. Cadangan: kos peralatan (${rm(cost)}) dibahagi 5 tahun. Susut nilai terkumpul setakat ini: ${rm(dep)}.</p>
+<div class="grid"><label>Susut nilai tahun ini (RM)<input type="number" min="0" step="0.01" id="y2" inputmode="decimal" value="${Math.round(cost/5)||''}"></label></div><button class="sec" onclick="ye(2)">Rekod susut nilai</button>
+<h3>3. Cukai pendapatan</h3><p class="mu">Anggaran cukai untuk tahun ini. Tanya akauntan atau semak LHDN. Jika tiada cukai, langkau langkah ini.</p>
+<div class="grid"><label>Anggaran cukai (RM)<input type="number" min="0" step="0.01" id="y3" inputmode="decimal"></label></div><button class="sec" onclick="ye(3)">Rekod cukai</button></div>`}
+function ye(n){const v=parseFloat($('y'+n).value),d=S.end,p=(dr,cr,a,ds)=>S.e.push({id:Date.now()+Math.random(),d,dr,cr,a:Math.round(a*100)/100,ds});
+if(!(v>=0)||isNaN(v)){flash='';return alert('Masukkan amaun dahulu.')}
+if(n===1){const df=v-tot(['inv'],null,d);if(!df)return alert('Stok sudah sama dengan rekod.');df>0?p('1200','5000',df,'Stok akhir'):p('5000','1200',-df,'Stok akhir')}
+else if(v===0)return alert('Amaun mestilah lebih daripada 0.');
+else if(n===2)p('6040','1110',v,'Susut nilai');else p('7000','2020',v,'Anggaran cukai');
+save();flash='✓ Direkod.';render()}
+
+function table(rows,y0,y1){return `<div class="sc"><table><thead><tr><th></th><th class="n">${y0}<br>RM</th><th class="n">${y1}<br>RM</th></tr></thead><tbody>`+rows.map(r=>`<tr class="${r[3]||''}"><td>${r[0]}${r[4]?`<small>${r[4]}</small>`:''}</td><td class="n">${r[1]==null?'':fmt(r[1])}</td><td class="n">${r[2]==null?'':fmt(r[2])}</td></tr>`).join('')+`</tbody></table></div>`}
+const head=(t,s)=>`<div class="hd"><b>${esc(S.name)}</b><b>${t}</b><span>${s}</span></div>`;
+function soci(){const P=[[S.start,S.end],[py(S.start),py(S.end)]],rows=[];
+const cap=(lab,k,sg,gl)=>{const v=P.map(([f,t])=>sg*tot(k,f,t));rows.push([lab,v[0],v[1],'c',gl]);
+accs(k).forEach(a=>{const w=P.map(([f,t])=>sg*val(a[0],f,t));if(w[0]||w[1])rows.push([a[1],w[0],w[1],'s',a[2]])});return v};
+const sub=(l,v,c,gl)=>rows.push([l,v[0],v[1],c,gl]);
+const rev=cap('Revenue',['rev'],1,'Jualan'),cg=cap('Cost of sales',['cogs'],-1,'Kos jualan (bahan terus untuk jual)'),gp=add2(rev,cg);sub('Gross profit',gp,'t','Untung kasar');
+const oi=cap('Other income',['oi'],1,'Pendapatan lain'),di=cap('Distribution costs',['dist'],-1,'Kos iklan dan penghantaran'),ad=cap('Administrative expenses',['adm'],-1,'Kos operasi (gaji, sewa, bil)'),fi=cap('Finance costs',['fin'],-1,'Faedah pinjaman');
+const pbt=add2(gp,oi,di,ad,fi);sub('Profit before tax',pbt,'t','Untung sebelum cukai');
+const tx=cap('Income tax expense',['taxe'],-1,'Cukai'),pat=add2(pbt,tx);sub('Profit for the year',pat,'t','Untung bersih tahun ini');
+rows.push(['Other comprehensive income, net of tax',0,0,'c','Pendapatan komprehensif lain (biasanya tiada)']);
+sub('Total comprehensive income for the year',pat,'g','Jumlah pendapatan komprehensif');
+return head('Statement of Profit or Loss and Other Comprehensive Income','for the year ended '+dl(S.end))+table(rows,S.end.slice(0,4),py(S.end).slice(0,4))+`<p class="mu">Mengikut MFRS 101, pengelasan mengikut fungsi. Tahun sebelumnya ialah lajur perbandingan.</p>`}
+function sofp(){const P=[[null,S.end],[null,py(S.end)]],rows=[];
+const g=k=>P.map(([f,t])=>tot(k,f,t));const L=(l,v,c,gl)=>rows.push([l,v[0],v[1],c||'',gl]);const H=(l,c,gl)=>rows.push([l,null,null,c,gl]);
+H('ASSETS','h','Aset (apa yang anda miliki)');H('Non-current assets','c','Aset jangka panjang');
+const ppe=g(['ppe']);L('Property, plant and equipment',ppe,'s','Peralatan dan mesin (selepas susut nilai)');L('Total non-current assets',ppe,'t');
+H('Current assets','c','Aset semasa');const inv=g(['inv']),rec=g(['rec','pre']),cs=g(['cash']);
+L('Inventories',inv,'s','Stok');L('Trade and other receivables',rec,'s','Pelanggan berhutang dan bayaran awal');L('Cash and cash equivalents',cs,'s','Tunai dan wang di bank');
+const ca=add2(inv,rec,cs);L('Total current assets',ca,'t');const ta=add2(ppe,ca);L('TOTAL ASSETS',ta,'g','Jumlah aset');
+H('EQUITY AND LIABILITIES','h','Ekuiti dan liabiliti');H('Equity','c','Ekuiti (hak pemilik)');
+const cp=g(['cap']),re=P.map(([f,t])=>val('3200',f,t)+pl(null,t)-val('3100',f,t));
+L('Owner’s capital',cp,'s','Modal pemilik');L('Retained earnings (after drawings)',re,'s','Untung terkumpul tolak pengeluaran pemilik');const eq=add2(cp,re);L('Total equity',eq,'t');
+H('Non-current liabilities','c','Liabiliti jangka panjang');const nc=g(['ncb']);L('Borrowings',nc,'s','Pinjaman bank');L('Total non-current liabilities',nc,'t');
+H('Current liabilities','c','Liabiliti semasa (perlu dibayar dalam 12 bulan)');const tp=g(['tp','op']),cb=g(['cb']),tx=g(['ctax']);
+L('Trade and other payables',tp,'s','Hutang pembekal dan lain-lain');L('Borrowings',cb,'s','Pinjaman jangka pendek');L('Current tax liabilities',tx,'s','Cukai belum bayar');
+const cl=add2(tp,cb,tx);L('Total current liabilities',cl,'t');L('Total liabilities',add2(nc,cl),'t','Jumlah liabiliti');
+const tel=add2(eq,nc,cl);L('TOTAL EQUITY AND LIABILITIES',tel,'g','Jumlah ekuiti dan liabiliti');
+const ok=Math.abs(ta[0]-tel[0])<.005&&Math.abs(ta[1]-tel[1])<.005;
+return head('Statement of Financial Position','as at '+dl(S.end))+table(rows,S.end.slice(0,4),py(S.end).slice(0,4))+`<p class="${ok?'ok':'bad'}">${ok?'✓ Aset sama dengan ekuiti ditambah liabiliti. Laporan seimbang.':'⚠ Laporan tidak seimbang. Semak rekod anda.'}</p><p class="mu">Mengikut MFRS 101, pengelasan semasa dan bukan semasa.</p>`}
+function tb(){let d=0,c=0;const r=A.map(a=>{const b=raw(a[0],null,S.end);if(!b)return '';b>0?d+=b:c-=b;return `<tr><td>${a[0]}</td><td>${a[1]}<br><small>${a[2]}</small></td><td class="n">${b>0?fmt(b):''}</td><td class="n">${b<0?fmt(-b):''}</td></tr>`}).join('');
+return `<h2>Imbangan duga pada ${dl(S.end)}</h2><p class="mu">Untuk semakan akauntan. Jumlah debit mesti sama dengan kredit.</p><div class="sc"><table><thead><tr><th>Kod</th><th>Akaun</th><th class="n">Debit</th><th class="n">Kredit</th></tr></thead><tbody>${r}<tr><td></td><td><b>Jumlah</b></td><td class="n"><b>${fmt(d)}</b></td><td class="n"><b>${fmt(c)}</b></td></tr></tbody></table></div>`}
+function vRep(){const t=[['soci','SOCI: Untung Rugi'],['sofp','SOFP: Kunci Kira-kira'],['tb','Imbangan duga']];
+const body={soci:()=>`<div class="rep">${soci()}</div>`,sofp:()=>`<div class="rep">${sofp()}</div>`,tb}[rp]();
+return `<div class="noprint">`+t.map(x=>`<button class="${rp===x[0]?'pri':'sec'}" onclick="rp='${x[0]}';render()">${x[1]}</button>`).join('')+`</div><div class="card">${body}</div><button class="pri noprint" onclick="window.print()">Cetak / simpan PDF</button>`}
+
+function vSet(){return `<div class="card"><h2>Tetapan</h2><div class="grid">
+<label>Nama gerai<input value="${esc(S.name)}" onchange="S.name=this.value;save();hdr()"></label>
+<label>Tahun kewangan mula<input type="date" value="${S.start}" onchange="S.start=this.value;save()"></label>
+<label>Tahun kewangan tamat<input type="date" value="${S.end}" onchange="S.end=this.value;save()"></label></div>
+<button class="sec" onclick="if(confirm('Mula tahun kewangan seterusnya? Rekod lama kekal dan jadi lajur perbandingan.')){S.start=ny(S.start);S.end=ny(S.end);save();tab='home';render()}">Mula tahun kewangan seterusnya</button>
+<button class="sec" onclick="if(confirm('Ganti semua rekod dengan data contoh?')){S.e=sample();S.start='2026-01-01';S.end='2026-12-31';save();render()}">Muat data contoh</button>
+<button class="sec" onclick="if(confirm('Padam SEMUA rekod dan tetapan?')){S=null;try{localStorage.removeItem(KEY)}catch(e){}render()}">Padam semua dan mula semula</button></div>
+<div class="card"><h2>Nota</h2><p>Data disimpan dalam pelayar peranti ini sahaja. Cetak laporan sebagai PDF untuk simpanan kekal.</p>
+<p>Jika gerai anda sudah lama beroperasi, letak baki tunai dan bank sedia ada sebagai <i>Pemilik letak modal</i>.</p>
+<p>App ini mengikut format persembahan MFRS 101. Sahkan dengan akauntan jika laporan untuk bank atau LHDN.</p></div>`}
+
+function hdr(){$('ttl').textContent=S?S.name:'Akaun Gerai Satay'}
+function render(){const nav=$('nav'),v=$('view');
+if(!S){nav.innerHTML='';v.innerHTML=welcome();hdr();return}
+const T=[['home','Utama'],['tx','Rekod'],['ye','Tutup tahun'],['rep','Laporan'],['set','Tetapan']];
+nav.innerHTML=T.map(t=>`<button class="${tab===t[0]?'on':''}" onclick="tab='${t[0]}';act=null;flash='';render()">${t[1]}</button>`).join('');
+v.innerHTML={home,tx:vTx,ye:vYE,rep:vRep,set:vSet}[tab]();hdr();if(tab==='tx'&&act!==null){pv();const f=$('frm');if(f)f.scrollIntoView({block:'nearest'})}}
+load();render();
+</script>
+</body>
+</html>
