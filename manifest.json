@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "Akaun Gerai Satay",
+  "short_name": "Gerai Satay",
+  "description": "Aplikasi perakaunan gerai satay (SOCI & SOFP MFRS)",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF7ED",
+  "theme_color": "#C2410C",
+  "icons": [
+    {
+      "src": "https://flaticon.com",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://flaticon.com",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
